@@ -1,0 +1,33 @@
+{
+  "name": "webpack-hash",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "webpack --config webpack.config.js",
+    "build:hash": "cross-env HASH=hash npm run build",
+    "build:contenthash": "cross-env HASH=contenthash npm run build",
+    "build:chunkhash": "cross-env HASH=chunkhash npm run build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.21.8",
+    "@babel/preset-env": "^7.21.5",
+    "@inquirer/select": "^1.1.3",
+    "babel-loader": "^8.1.2",
+    "cross-env": "^7.0.3",
+    "css-loader": "^4.3.0",
+    "dayjs": "^1.11.7",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^1",
+    "rimraf": "^5.0.0",
+    "webpack": "^4",
+    "webpack-cli": "^3"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
