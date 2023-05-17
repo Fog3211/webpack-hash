@@ -5,10 +5,7 @@
   "main": "index.js",
   "scripts": {
     "clean": "rimraf dist",
-    "build": "webpack --config webpack.config.js",
-    "build:hash": "cross-env HASH=hash npm run build",
-    "build:contenthash": "cross-env HASH=contenthash npm run build",
-    "build:chunkhash": "cross-env HASH=chunkhash npm run build"
+    "build": "node build.js"
   },
   "keywords": [],
   "author": "",

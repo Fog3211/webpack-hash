@@ -5,7 +5,8 @@ const dayjs = require('dayjs')
 
 const baseDir = `${dayjs().format('YYYY-MM-DD HH:mm:ss')}/`
 
-const hashMode = process.env.HASH || 'hash'
+const jsHashMode = process.env.JS_HASH || 'hash'
+const cssHashMode = process.env.CSS_HASH || 'hash'
 
 /**
  * @type {import('webpack').Configuration}
@@ -19,7 +20,7 @@ module.exports = {
   mode: 'production',
   output: {
     path: path.resolve(__dirname, './dist'),
-    filename: `${baseDir}[name].[${hashMode}:6].js`,
+    filename: `${baseDir}[name].[${jsHashMode}].js`,
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -46,7 +47,7 @@ module.exports = {
     },
     minimizer: [
       new MiniCssExtractPlugin({
-        filename: `${baseDir}[name].[${hashMode}:6].css`,
+        filename: `${baseDir}[name].[${cssHashMode}].css`,
       }),
     ],
   },
